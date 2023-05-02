@@ -1,0 +1,243 @@
+@font-face {
+    font-family: "Clear Sans";
+    src: url("../src/clear-sans.ttf") format("truetype");
+}
+
+body {
+    display: flex;
+    background: rgb(2, 0, 36);
+    background: rgb(104, 104, 104);
+    color: white;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    font-family: "Clear Sans", sans-serif;
+    font-size: 21px;
+}
+
+.text {
+    order: 2;
+    padding-top: 40px;
+    width: 440px;
+    font-weight: bold;
+}
+
+.board {
+    order: 1;
+    width: 440px;
+    height: 440px;
+    padding: 5px;
+    background-color: rgb(104, 104, 104);
+    border-radius: 7px;
+    outline: none;
+    position: relative;
+}
+
+.board .cell,
+.tile {
+    user-select: none;
+    cursor: default;
+}
+
+.details-box {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    justify-content: space-between;
+}
+
+.resetButton {
+    background-color: rgb(149, 149, 149);
+    color: rgb(252, 252, 252);
+    cursor: pointer;
+    font-size: 25px;
+    padding: 10px 20px;
+    border-radius: 7px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    &:hover {
+        background-color: #d3386a;
+        color: rgba(255, 255, 255, 1);
+    }
+}
+
+.score-header {
+    font-size: 50%;
+}
+
+.score-box {
+    background-color: rgb(149, 149, 149);
+    color: rgb(252, 252, 252);
+    min-width: 50px;
+    width: 70px;
+    padding: 5px 15px;
+    border-radius: 7px;
+}
+
+.cell,
+.tile {
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+    line-height: 90px;
+    display: inline-block;
+    font-size: 55px;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 7px;
+    font-family: "Clear Sans";
+    color: #766;
+    background-color: rgb(149, 149, 149);
+}
+
+.tile0 {
+    background-color: #dcb;
+}
+
+.tile2 {
+    background-color: #eee;
+    color: #8f8b8b;
+}
+
+.tile4 {
+    background-color: rgb(255, 255, 240);
+    color: #8f8b8b;
+}
+
+.tile8 {
+    background-color: rgb(233, 162, 129);
+    color: #fff;
+}
+
+.tile16 {
+    background-color: rgb(224, 138, 98);
+    color: #fff;
+}
+
+.tile32 {
+    background-color: rgb(224, 117, 98);
+    color: #fff;
+}
+
+.tile64 {
+    background-color: rgb(219, 86, 63);
+    color: #fff;
+}
+
+.tile128 {
+    background-color: rgb(232, 218, 161);
+    color: #fff;
+}
+.tile256 {
+    background-color: rgb(252, 236, 172);
+    color: #fff;
+    font-size: 45px;
+}
+
+.tile512 {
+    background-color: rgb(248, 228, 150);
+    color: #fff;
+    font-size: 45px;
+}
+
+.tile1024 {
+    background-color: rgb(247, 223, 124);
+    color: #fff;
+    font-size: 35px;
+}
+
+.tile2048 {
+    position: absolute;
+    background-size: contain;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 0px;
+    background-color: rgb(253, 224, 106);
+    color: #fff;
+    font-size: 35px;
+}
+
+.try-again {
+    z-index: 10;
+    height: 100px;
+    width: 100px;
+    // background-image: url(./assets/img/try-again.gif);
+}
+
+.tile {
+    position: absolute;
+}
+
+.tile.merged {
+    display: none;
+}
+
+.tile.merged.isMoving {
+    display: inline;
+}
+
+.tile.new,
+.overlay {
+    animation-duration: 0.2s;
+    animation-name: newTile;
+    animation-fill-mode: forwards;
+    animation-delay: 0.15s;
+    transform: scale(0);
+}
+
+@keyframes newTile {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+.overlay {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    left: 0px;
+    right: 0px;
+    font-size: 55px;
+    font-weight: bolder;
+    border-radius: 7px;
+}
+
+.tryAgain {
+    background-color: #876;
+    color: #fff;
+    height: 40px;
+    width: 200px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    border: 2px solid white;
+}
+
+.gameOver {
+    background-size: contain;
+    // background-image: url(./assets/img/game-over.gif);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    text-align: center;
+}
+
+.overlay .message {
+    color: #666;
+}
