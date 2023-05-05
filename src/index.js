@@ -5,13 +5,13 @@ import "./main.scss";
 import "./styles.scss";
 
 const App = () => {
-  return <BoardView />;
+    return <BoardView />;
 };
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <>
-    <h1>2048</h1>
-    <App />
-  </>
+    <>
+        <h1 className="h2048">2048</h1>
+        <App />
+    </>
 );

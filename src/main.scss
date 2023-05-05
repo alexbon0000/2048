@@ -15,7 +15,10 @@ body {
     font-family: "Clear Sans", sans-serif;
     font-size: 21px;
 }
-
+.h2048 {
+    display: flex;
+    justify-content: center;
+}
 .text {
     order: 2;
     padding-top: 40px;
